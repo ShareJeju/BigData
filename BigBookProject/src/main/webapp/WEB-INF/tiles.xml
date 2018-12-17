@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="main" template="/WEB-INF/main/main.jsp">
+ 	<put-attribute name="content" value="/WEB-INF/main/content.jsp"/>
+	 <put-attribute name="sidebar" value="/WEB-INF/main/sidebar.jsp"/>
+	</definition>
+	<definition name="*/*" extends="main">
+		<!-- 변경되는 영역설정 -->
+	 <put-attribute name="content" value="/WEB-INF/{1}/{2}.jsp"/>
+	</definition>
+	<definition name="*/*/*" extends="main">
+		<!-- 변경되는 영역설정 -->
+	 <put-attribute name="content" value="/WEB-INF/{1}/{2}/{3}.jsp"/>
+	</definition>
+</tiles-definitions>
