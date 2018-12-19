@@ -14,13 +14,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 
 public class BlogTestManager {
-	
-	public static void main(String[] args)
-	{
-		BlogTestManager bt = new BlogTestManager();
-		bt.bookData();
-		bt.xmlParseData();
-	}
+
 	public void bookData(){
      try {
          String apiURL = "http://book.interpark.com/api/bestSeller.api?key=B2AD9A39F5E89BD65F6B6D2BD1770773FC14D9C13954B632A69C10A81F495526&&categoryId=100"; 
@@ -40,12 +34,12 @@ public class BlogTestManager {
              response.append(inputLine);
          }
          br.close();
-           FileWriter fw=new FileWriter("/home/sist/data/book_soseol.xml");
+           FileWriter fw=new FileWriter("/home/sist/data/book.xml");
            fw.write(response.toString());
            fw.close();
          System.out.println(response.toString());
-         xmlParseData();
-         System.out.println("save end1..");
+         //xmlParseData();
+         System.out.println("save end..");
      } catch (Exception e) {
          e.printStackTrace();
      }
@@ -56,23 +50,32 @@ public class BlogTestManager {
 		try {
 			JAXBContext jc = JAXBContext.newInstance(Channel.class); //Rss.class=> @XmlRootElement의 클래스
 			Unmarshaller un = jc.createUnmarshaller(); // 파싱
-			Channel channel = (Channel)un.unmarshal(new File("/home/sist/data/book_soseol.xml"));
+			Channel channel = (Channel)un.unmarshal(new File("/home/sist/data/book.xml"));
 			List<Item> list=channel.getItem();
+			
 			String data = "";
 			for(Item i:list)
 			{
-				data+=i.getItemId()+","+i.getTitle()+","+i.getDescription()+","
-						+i.getPubDate()+","+i.getCoverSmallUrl()+","+i.getCoverLargeUrl()+","
-						+i.getCategoryId()+","+i.getCategoryName()+","+i.getPublisher()+","
-						+i.getRank()+","+i.getCustomerReviewRank()+","+i.getReviewCount()+","
-						+i.getAuthor()+","+i.getLink()+"\n";
+				data+=i.getItemId()+"|"+i.getTitle()+"|"+i.getDescription()+"|"
+						+i.getPubDate()+"|"+i.getCoverSmallUrl()+"|"+i.getCoverLargeUrl()+"|"
+						+i.getCategoryId()+"|"+i.getCategoryName()+"|"+i.getPublisher()+"|"
+						+i.getRank()+"|"+i.getCustomerReviewRank()+"|"+i.getReviewCount()+"|"
+						+i.getAuthor()+"|"+i.getLink()+"\n";
 			}
-			data=data.substring(0, data.lastIndexOf("\n"));
+			//data=data.substring(0, data.lastIndexOf("-end-\n"));
 			//data=data.replaceAll("[^가-힣 ]", "");
-			FileWriter fw = new FileWriter("/home/sist/data/book_soseol_res.txt");
+			FileWriter fw = new FileWriter("/home/sist/data/book.txt",true);
 			fw.write(data);
 			fw.close();
 			
 		} catch (Exception ex) {ex.printStackTrace();}
+	}
+		
+	
+	public static void main(String[] args)
+	{
+		BlogTestManager bt = new BlogTestManager();
+		bt.bookData();
+		bt.xmlParseData();
 	}
 }
