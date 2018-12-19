@@ -18,7 +18,7 @@ public class MainClass2 {
 			//컨테이너에 등록된 클래스를 알려준다 (관리요청)
 		ApplicationContext app=new ClassPathXmlApplicationContext("app.xml");//메모리할당이 끝남 ==> DI
 		
-		//MainClass mc = app.getBean("mainClass",MainClass.class);
+		MainClass2 mc = app.getBean("mainClass",MainClass2.class);
 		
 		try {
 			StringBuffer sb=new StringBuffer();
