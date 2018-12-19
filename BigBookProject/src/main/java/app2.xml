@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.8.xsd">
+ <!-- 사용자 정의(프로그래머가 만든 클래스)
+ 		context:component-scan==>package단위로 등록
+ 		라이브러리 (이미 만들어진 클래스) ==>어노테이션을 사용할 수 없다.
+ 		 <bean>을 이용해서 사용한다.
+ 		 
+ 		 
+ 		 =======================================ApplicationContext
+ 		 순서
+ 		 1) 등록된 모든 클래스의 메모리 할당
+ 		 2) DI (@Autowired, @resource)
+ 		 3) 요청된 메소드 호출 (init-method)
+ 		 4) 프로그래머가 사용(활용)
+ 		 5) 메모리 해제
+ 		 =================================================================
+ 		 
+  -->
+	<context:component-scan base-package="com.sist.*"/>
+	<mongo:mongo-client
+		host="localhost"
+		port="27017"
+		id="mc"
+	/>
+	<bean id="mt"
+	    class="org.springframework.data.mongodb.core.MongoTemplate">
+	     <constructor-arg ref="mc"/>
+	     <constructor-arg value="mydb"/>
+	    </bean>
+</beans>
