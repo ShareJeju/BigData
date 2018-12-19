@@ -1,10 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+	init();
+	});
+
+function init()
+{
+	$.ajax({
+		type:'post',
+		url:'main_news.do',
+		success:function(response){
+			$('#news').html(response);
+		}
+	});	
+}
+</script>
 </head>
 <body>
  
@@ -83,6 +101,70 @@
                 </a>
               </div>
             </div>
+          </div>
+          
+          <div class="row">
+           <div class="col-xl-6 col-sm-12">
+            <div class="card-body">
+            <h2>오늘의 도서 뉴스</h2>
+            <div id="news"></div>
+ <%--      <table class="table">
+	<c:forEach var="vo" items="${nlist }" varStatus="s">
+		<c:if test="${s.index<5}">
+		<tr>
+			<td>
+				<table class="table table-hover">
+					<tr>
+						<td rowspan="3" width=30%>
+						<img src="${vo.poster }" width=300 height=200>
+						</td>
+						<th class="success text-center">${vo.title }</th>
+					</tr>
+					<tr>
+						<td width=70% class="text-center">${vo.auth } ${vo.pubDate }</td>
+					</tr>
+					<tr>
+						<td width=70%>${vo.description }</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		</c:if>
+	</c:forEach>
+	
+	</table>  --%>
+	</div>
+</div>
+          
+       <div class="col-xl-6 col-sm-12">
+        <div class="card-body">
+        동영상 영역
+        <%--   <table class="table">
+	<c:forEach var="vo" items="${nlist }" varStatus="s">
+		<c:if test="${s.index>5&&s.index<11 }">
+		<tr>
+			<td>
+				<table class="table table-hover">
+					<tr>
+						<td rowspan="3" width=30%>
+						<img src="${vo.poster }" width=300 height=200>
+						</td>
+						<th class="success text-center">${vo.title }</th>
+					</tr>
+					<tr>
+						<td width=70% class="text-right">${vo.auth } ${vo.pubDate }</td>
+					</tr>
+					<tr>
+						<td width=70%>${vo.description }</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		</c:if>
+	</c:forEach>
+	</table> --%>
+          	</div>
+          </div>
           </div>
 
           <!-- Area Chart Example-->
