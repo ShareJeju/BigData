@@ -1,67 +1,37 @@
 package com.sist.dao;
 
 public class BookVO {
-	private String itemId;
-	private String title;
-	private String description;
-	private String pubDate;
-	private String coverSmallUrl;
-	private String coverLargeUrl;
-	private String categoryId;
-	private String categoryName;
+	private int no;
+	private int ranking;
+	private String bookname;
+	private String authors;
 	private String publisher;
-	private String rank;
-	private String customerReviewRank;
-	private String reviewCount;
-	private String author;
-	private String link;
-	public String getItemId() {
-		return itemId;
+	private int publication_year;
+	private String loan_count;
+	private String bookImageURL;
+	public int getNo() {
+		return no;
 	}
-	public void setItemId(String itemId) {
-		this.itemId = itemId;
+	public void setNo(int no) {
+		this.no = no;
 	}
-	public String getTitle() {
-		return title;
+	public int getRanking() {
+		return ranking;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setRanking(int ranking) {
+		this.ranking = ranking;
 	}
-	public String getDescription() {
-		return description;
+	public String getBookname() {
+		return bookname;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setBookname(String bookname) {
+		this.bookname = bookname;
 	}
-	public String getPubDate() {
-		return pubDate;
+	public String getAuthors() {
+		return authors;
 	}
-	public void setPubDate(String pubDate) {
-		this.pubDate = pubDate;
-	}
-	public String getCoverSmallUrl() {
-		return coverSmallUrl;
-	}
-	public void setCoverSmallUrl(String coverSmallUrl) {
-		this.coverSmallUrl = coverSmallUrl;
-	}
-	public String getCoverLargeUrl() {
-		return coverLargeUrl;
-	}
-	public void setCoverLargeUrl(String coverLargeUrl) {
-		this.coverLargeUrl = coverLargeUrl;
-	}
-	public String getCategoryId() {
-		return categoryId;
-	}
-	public void setCategoryId(String categoryId) {
-		this.categoryId = categoryId;
-	}
-	public String getCategoryName() {
-		return categoryName;
-	}
-	public void setCategoryName(String categoryName) {
-		this.categoryName = categoryName;
+	public void setAuthors(String authors) {
+		this.authors = authors;
 	}
 	public String getPublisher() {
 		return publisher;
@@ -69,35 +39,24 @@ public class BookVO {
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
 	}
-	public String getRank() {
-		return rank;
+	public int getPublication_year() {
+		return publication_year;
 	}
-	public void setRank(String rank) {
-		this.rank = rank;
+	public void setPublication_year(int publication_year) {
+		this.publication_year = publication_year;
 	}
-	public String getCustomerReviewRank() {
-		return customerReviewRank;
+	public String getLoan_count() {
+		return loan_count;
 	}
-	public void setCustomerReviewRank(String customerReviewRank) {
-		this.customerReviewRank = customerReviewRank;
+	public void setLoan_count(String loan_count) {
+		this.loan_count = loan_count;
 	}
-	public String getReviewCount() {
-		return reviewCount;
+	public String getBookImageURL() {
+		return bookImageURL;
 	}
-	public void setReviewCount(String reviewCount) {
-		this.reviewCount = reviewCount;
+	public void setBookImageURL(String bookImageURL) {
+		this.bookImageURL = bookImageURL;
 	}
-	public String getAuthor() {
-		return author;
-	}
-	public void setAuthor(String author) {
-		this.author = author;
-	}
-	public String getLink() {
-		return link;
-	}
-	public void setLink(String link) {
-		this.link = link;
-	}
+	
 	
 }
