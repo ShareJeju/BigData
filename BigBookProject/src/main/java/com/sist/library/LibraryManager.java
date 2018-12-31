@@ -40,9 +40,9 @@ public class LibraryManager {
            FileWriter fw=new FileWriter("/home/sist/data/library.xml");
            fw.write(response.toString());
            fw.close();
-         System.out.println(response.toString());
+        // System.out.println(response.toString());
          xmlParseData();
-         System.out.println("save end1..");
+        // System.out.println("save end1..");
      } catch (Exception e) {
          e.printStackTrace();
      }
@@ -68,7 +68,7 @@ public class LibraryManager {
 			{
 				data+=i.getGigan()+","+i.getJachigu()+","+i.getGye()+","+i.getGungnipdoseogwan()+","+i.getGonggongdoseogwan()+","+i.getDaehakdoseogwan()+","+i.getJeonmundoseogwan()+"\n";
 				
-				System.out.println(i.getGigan()+","+i.getJachigu()+","+i.getGye()+","+i.getGungnipdoseogwan()+","+i.getGonggongdoseogwan()+","+i.getDaehakdoseogwan()+","+i.getJeonmundoseogwan());
+				//System.out.println(i.getGigan()+","+i.getJachigu()+","+i.getGye()+","+i.getGungnipdoseogwan()+","+i.getGonggongdoseogwan()+","+i.getDaehakdoseogwan()+","+i.getJeonmundoseogwan());
 			}
 			data=data.substring(0, data.lastIndexOf("\n"));
 			//data=data.replaceAll("[^가-힣 ]", "");

@@ -9,12 +9,12 @@
 <body>
   <ul class="sidebar navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="charts.do">
+          <a class="nav-link" href="../../book/charts/charts.do">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Charts</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="tables.do">
+          <a class="nav-link" href="../../book/tables/tables.do">
             <i class="fas fa-fw fa-table"></i>
             <span>Tables</span></a>
         </li>

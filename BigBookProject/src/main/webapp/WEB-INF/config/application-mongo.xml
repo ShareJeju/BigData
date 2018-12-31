@@ -9,7 +9,7 @@
 		http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.8.xsd">
     <!-- mongo setting -->
     <mongo:mongo-client
-      host="localhost"
+      host="211.238.142.57"
       port="27017"
       id="mc"
     />

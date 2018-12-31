@@ -22,7 +22,7 @@ public class BlogManager {
          //String text = URLEncoder.encode("아몬드", "UTF-8");
     	  //String apiURL = "http://book.interpark.com/api/search.api?key=B2AD9A39F5E89BD65F6B6D2BD1770773FC14D9C13954B632A69C10A81F495526&"
     	  //+"query="+text+"&queryType=title";
-         String apiURL = "http://data4library.kr/api/loanItemSrch?authKey=c51b8ad336a31f3030c5550b57fdd7b7797f1c0a2b34bc04bfe3ef7d4f7f062c&startDt=2018-01-01&endDt=2018-12-20&addCode=0&kdc=1"; 
+         String apiURL = "http://data4library.kr/api/loanItemSrch?authKey=61628f222de45310d22d691e182b418159ea4e98d65d88a73b178b1fae16b077&startDt=2018-01-01&endDt=2018-12-20&gender=1&age=60"; 
          URL url = new URL(apiURL);
          HttpURLConnection con = (HttpURLConnection)url.openConnection();
          con.setRequestMethod("GET");
@@ -39,7 +39,7 @@ public class BlogManager {
              response.append(inputLine);
          }
          br.close();
-           FileWriter fw=new FileWriter("/home/sist/data/book.xml");
+           FileWriter fw=new FileWriter("/home/sist/data/jhbook.xml");
            fw.write(response.toString());
            fw.close();
          System.out.println(response.toString());
@@ -55,19 +55,19 @@ public class BlogManager {
 		try {
 			JAXBContext jc = JAXBContext.newInstance(Response.class); //Rss.class=> @XmlRootElement의 클래스
 			Unmarshaller un = jc.createUnmarshaller(); // 파싱
-			Response res = (Response)un.unmarshal(new File("/home/sist/data/book.xml"));
+			Response res = (Response)un.unmarshal(new File("/home/sist/data/jhbook.xml"));
 			List<Doc> list=res.getDocs().getDoc();
 			
 			String data = "";
 			for(Doc i:list)
 			{
-				data+=i.getNo()+"|"+i.getRanking()+"|"+i.getBookname()+"|"+
-					  i.getAuthors()+"|"+i.getPublisher()+"|"+i.getPublication_year()+"|"+
-						i.getLoan_count()+"|"+i.getBookImageURL()+"\n";
+				data+=i.getNo()+"|||"+i.getRanking()+"|||"+i.getBookname()+"|||"+
+					  i.getAuthors()+"|||"+i.getPublisher()+"|||"+i.getPublication_year()+"|||"+
+						i.getLoan_count()+"|||"+i.getBookImageURL()+"|||"+"여성"+"|||"+"60대이상"+"\n";
 			}
 			//data=data.substring(0, data.lastIndexOf("-end-\n"));
 			//data=data.replaceAll("[^가-힣 ]", "");
-			FileWriter fw = new FileWriter("/home/sist/data/book.txt");
+			FileWriter fw = new FileWriter("/home/sist/data/jhbook.txt",true);
 			fw.write(data);
 			fw.close();
 			

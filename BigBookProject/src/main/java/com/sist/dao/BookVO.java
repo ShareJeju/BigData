@@ -1,25 +1,47 @@
 package com.sist.dao;
 
 public class BookVO {
-	private int no;
-	private int ranking;
+	private String no;
+	private String ranking;
 	private String bookname;
 	private String authors;
 	private String publisher;
-	private int publication_year;
+	private String publication_year;
 	private String loan_count;
 	private String bookImageURL;
-	public int getNo() {
+	private String gender;
+	private String age;
+	
+	
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public String getAge() {
+		return age;
+	}
+	public void setAge(String age) {
+		this.age = age;
+	}
+	public String getNo() {
 		return no;
 	}
-	public void setNo(int no) {
+	public void setNo(String no) {
 		this.no = no;
 	}
-	public int getRanking() {
+	public String getRanking() {
 		return ranking;
 	}
-	public void setRanking(int ranking) {
+	public void setRanking(String ranking) {
 		this.ranking = ranking;
+	}
+	public String getPublication_year() {
+		return publication_year;
+	}
+	public void setPublication_year(String publication_year) {
+		this.publication_year = publication_year;
 	}
 	public String getBookname() {
 		return bookname;
@@ -39,12 +61,7 @@ public class BookVO {
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
 	}
-	public int getPublication_year() {
-		return publication_year;
-	}
-	public void setPublication_year(int publication_year) {
-		this.publication_year = publication_year;
-	}
+	
 	public String getLoan_count() {
 		return loan_count;
 	}

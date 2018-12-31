@@ -27,7 +27,7 @@ public class BlogMain {
 		{
 			StringBuffer sb=new StringBuffer();
 			// sb.append() ==> 문자열 결합 (데이터가 많은 경우) +
-			FileReader fr=new FileReader("/home/sist/data/book.txt");
+			FileReader fr=new FileReader("/home/sist/data/jhbook.txt");
 			
 			int i=0;
 			// fr.read() : 한글자 ==> 데이터값이 ASC
@@ -46,20 +46,21 @@ public class BlogMain {
 			{
 				try
 				{
-					String[] split = bd.split("\\|");
+					String[] split = bd.split("\\|\\|\\|");
 					System.out.println(split.length);
 					BookVO vo = new BookVO();
 					for(int j=0; j<split.length;j++)
 					{
-						vo.setNo(Integer.parseInt(split[j]));
-						vo.setRanking(Integer.parseInt(split[j+1]));
-						vo.setBookname(split[j+2]);
-						vo.setAuthors(split[j+3]);
-						vo.setPublisher(split[j+4]);
-						vo.setPublication_year(Integer.parseInt(split[j+5]));
-						vo.setLoan_count(split[j+6]);
-						vo.setBookImageURL(split[j+7]);
-						
+						vo.setNo(split[j].trim());
+						vo.setRanking(split[j+1].trim());
+						vo.setBookname(split[j+2].trim());
+						vo.setAuthors(split[j+3].trim());
+						vo.setPublisher(split[j+4].trim());
+						vo.setPublication_year(split[j+5].trim());
+						vo.setLoan_count(split[j+6].trim());
+						vo.setBookImageURL(split[j+7].trim());
+						vo.setGender(split[j+8].trim());
+						vo.setAge(split[j+9].trim());
 						System.out.println(split[j]);
 						mc.dao.BookInsert(vo);	
 					}
