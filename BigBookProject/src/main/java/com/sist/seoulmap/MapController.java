@@ -54,7 +54,7 @@ public class MapController implements Serializable{  // 메모리 입출력을 �
 	   String[] str={"[","[","[","[","[","[","[","["};	
 	   System.out.println("c_name[length] :"+c_name.length+"\n"+"str[length] : "+str.length);	   
 		for (int i = 0; i < c_name.length; i++) {
-			List<BookjiVO> list = bDao.locationCrimeData(guList_1[Integer.parseInt(gu)], c_name[i]);
+			List<BookjiVO> list = bDao.locationBookData(guList_1[Integer.parseInt(gu)], c_name[i]);
 			
 			for (BookjiVO vo : list) {
 				str[i] += vo.getLoan_count() + ",";
@@ -109,12 +109,13 @@ public class MapController implements Serializable{  // 메모리 입출력을 �
 		}
 	
 	@RequestMapping("detailebook/detailebook.do")
-	public String detailebook_detailebook(String bookname, Model model,String bookImageURL,String authors,String publisher,String publication_year)
+	public String detailebook_detailebook(String bookname,Model model)
 	{	
 		bm.bookReplyData(bookname); //xml파일저장   //MovieManager.java
 		bm.xmlParseData(); //xml을 가지고 txt파일로 저장    //MovieManager.java
 		bs.book(); //저장된 txt파일을 분석		     //MovieSpark.java
 		r.bookGraph2();
+		BookjiVO bvo=bDao.DetailBookData(bookname);
 		try {
 			File dir=new File("/home/sist/data/output");
 			File[] files = dir.listFiles();
@@ -154,11 +155,8 @@ public class MapController implements Serializable{  // 메모리 입출력을 �
 				list.add(vo);
 			}
 			model.addAttribute("list", list);
+			model.addAttribute("bvo", bvo);
 			model.addAttribute("bookname", bookname);
-			model.addAttribute("bookImageURL", bookImageURL);
-			model.addAttribute("authors", authors);
-			model.addAttribute("publisher", publisher);
-			model.addAttribute("publication_year", publication_year);
 		} catch (Exception e) {}
 		
 		return "detailebook/detailebook";//분석한 결과를 jsp에 뿌려서 시각화 해준다.

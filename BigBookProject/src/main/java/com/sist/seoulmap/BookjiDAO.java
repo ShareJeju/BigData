@@ -21,7 +21,7 @@ public class BookjiDAO {
 
 	// { $or: [ { “title”: “article01” }, { “writer”: “Alpha” } ] }
 			// 지역별 데이터 
-			public List<BookjiVO> locationCrimeData(String loc,String c_name)
+			public List<BookjiVO> locationBookData(String loc,String c_name)
 			{
 				int total = 0;
 				int i=0;
@@ -34,6 +34,16 @@ public class BookjiDAO {
 				list=mt.find(query, BookjiVO.class,"seoul_gu_year_count");
 				return list;
 			}	
+			
+			public BookjiVO DetailBookData(String bookname)
+			{
+				BookjiVO vo=new BookjiVO();
+				
+				 BasicQuery query=new BasicQuery("{bookname:'"+bookname+"'}");
+				 vo=mt.findOne(query, BookjiVO.class,"seoul_gu_map");
+				
+				return vo;
+			}
 				/*
 				
 				 db.getCollection('seoul_gu_map').group(

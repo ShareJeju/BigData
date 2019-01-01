@@ -251,7 +251,7 @@ $(function(){
   			  <td class="text-center">${vo.gu }</td>
   			  <th class="text-center">${vo.age }</th>
   			  <td class="text-center"><img src="${vo.bookImageURL }" width=100 height=100></td>
-  			  <td class="text-center"><a href="../../book/detailebook/detailebook.do?bookname=${vo.bookname }&bookImageURL=${vo.bookImageURL}&authors=${vo.authors}&publisher=${vo.publisher}&publication_year=${vo.publication_year}">${vo.bookname }</a></td>
+  			  <td class="text-center"><a href="../../book/detailebook/detailebook.do?bookname=${vo.bookname }&bookImageURL=${vo.bookImageURL}">${vo.bookname }</a></td>
   			  <td class="text-center">${vo.loan_count } </td>
   			</tr>
   		</c:forEach>
