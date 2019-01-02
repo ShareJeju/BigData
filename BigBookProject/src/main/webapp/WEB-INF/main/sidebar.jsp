@@ -14,7 +14,7 @@
             <span>Charts</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../book/tables/tables.do">
+          <a class="nav-link" href="../../book/board/list.do">
             <i class="fas fa-fw fa-table"></i>
             <span>Tables</span></a>
         </li>
