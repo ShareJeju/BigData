@@ -34,68 +34,62 @@
 <body>
 	<%-- <%= application.getRealPath("/")%> --%>
 	<div class="container-fluid">
-	<table class="table" width="1000px">
-	 	 <tr>
-	 	   <td>
-	 	      <table class="table table-hover">
-	 	      	<tr>
-	 	      	  <td rowspan="4" width=20%>
-	 	      	     <img src="${bvo.bookImageURL}" width=300 height=450>
-	 	      	     </a>
-	 	      	  </td>
-	 	      	 <th class="success text-center">	 	      	     
-	 	      	      ${bvo.bookname }
-	 	      	       </a>
-	 	      	  </th>
-	 	      	 </tr>	 	      	 
-	 	      	 <tr>
-	 	      	  <td with=80% class="text-center">
-	 	      	    ${bvo.authors}
-	 	      	  </td>
-	 	      	 </tr>	 	      	 
-	 	      	 <tr>
-	 	      	  <td width=70% class="text-center">
-	 	      	     출판사 : ${bvo.publisher }
-	 	      	  </td>
-	 	      	  </tr>
-	 	      	   <tr>
-	 	      	  <td width=70% class="text-center">
-	 	      	     출판연도 : ${bvo.publication_year}
-	 	      	  </td>
-	 	      	  </tr>
-	 	      </table>
-	 	   </td>	 	   
-	 	 </tr>
-	</table>
-	
-		
-		<div class="row">
-		  <!-- Area Chart Example-->
-          <div class="card mb-3 col-sm-6">
-            <div class="card-header">
-              <i class="fas fa-chart-area"></i>
-              감성분석 그래프</div>
-				<div class="card-body" style="height: 640px;">
-					<div>
-						<div id="piechart_3d" style="width: 800px; height: 620px;"></div>
-					</div>
-				</div>
-				<div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-          </div>
-                    
-          <div class="card mb-3 col-sm-6">
-            <div class="card-header">
-              <i class="fas fa-chart-area"></i>
-             연관분석 시각화</div>
-            <div class="card-body" style="height: 640px;">
-             <div>
-				<img src="../book.png" width="700" height="620px;">
-			</div>
-            </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-          </div>
-          
+		<div class="container">
+			<table class="table">
+				<tr>
+					<td width="500px">
+						<table class="table" width="500px">
+							<tr>
+								<td rowspan="4" width=20%><img src="${bvo.bookImageURL}"
+									width=300 height=450> </a></td>
+								<th class="success text-center"><h4>${bvo.bookname }</h4> </a>
+								</th>
+							</tr>
+							<tr>
+								<td with=80% class="text-center"><h5>${bvo.authors}</h5></td>
+							</tr>
+							<tr>
+								<td width=70% class="text-center"><h5>출판사 : ${bvo.publisher }</h5></td>
+							</tr>
+							<tr>
+								<td width=70% class="text-center"><h5>출판연도 :
+									${bvo.publication_year}</h5></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
 		</div>
-	</div>
+
+			<div class="row">
+				<!-- Area Chart Example-->
+				<div class="card mb-3 col-sm-6">
+					<div class="card-header">
+						 <i>감성분석 그래프</i>
+					</div>
+					<div class="card-body" style="height: 640px;">
+						<div>
+							<div id="piechart_3d" style="width: 800px; height: 620px;"></div>
+						</div>
+					</div>
+					<div class="card-footer small text-muted">Updated yesterday
+						at 11:59 PM</div>
+				</div>
+
+				<div class="card mb-3 col-sm-6">
+					<div class="card-header">
+						<i>연관분석 시각화</i>
+					</div>
+					<div class="card-body" style="height: 640px;">
+						<div>
+							<img src="../book.png" width="700" height="620px;">
+						</div>
+					</div>
+					<div class="card-footer small text-muted">Updated yesterday
+						at 11:59 PM</div>
+				</div>
+
+			</div>
+		</div>
 </body>
 </html>

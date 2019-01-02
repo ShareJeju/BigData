@@ -200,6 +200,7 @@ $(function(){
 	
 	
 	    <!-- Area Chart Example-->
+	    <div class="container" style="max-width: 2200px;">
 		<div class="card mb-3">
 			<div class="card-header">
 				<i class="fas fa-chart-area"></i> 서울시 도서 맵
@@ -228,35 +229,39 @@ $(function(){
 			</div>
 			<div class="card-footer small text-muted">Sist</div>
 		</div>
-
-
-
-
 	</div>
-<div >
- <h1>베스트 셀러</h1>
-  <div class="row">
-  	<table class="table table-hover">
-  		<tr class="info">
-  		  <th class="text-center">년도</th>
-  		  <th class="text-center">지역구</th>
-  		  <th class="text-center">연령</th>
-  		  <th class="text-center"></th>
-  		  <th class="text-center">책 이름</th>
-  		  <th class="text-center">대출 횟수</th>
-  		</tr>
-  		<c:forEach var="vo" items="${cList }">
-  			<tr>
-  			  <td class="text-center">${vo.year }</td>
-  			  <td class="text-center">${vo.gu }</td>
-  			  <th class="text-center">${vo.age }</th>
-  			  <td class="text-center"><img src="${vo.bookImageURL }" width=100 height=100></td>
-  			  <td class="text-center"><a href="../../book/detailebook/detailebook.do?bookname=${vo.bookname }&bookImageURL=${vo.bookImageURL}">${vo.bookname }</a></td>
-  			  <td class="text-center">${vo.loan_count } </td>
-  			</tr>
-  		</c:forEach>
-  	</table>
-  </div>
- </div> 
+	</p>
+	
+	
+	<div>
+	   <p>
+		<h1>베스트 셀러</h1>
+		<div class="container" style="max-width: 1500px;">
+			<div class="row">
+				<table class="table table-hover">
+					<tr class="info">
+						<th class="text-center">년도</th>
+						<th class="text-center">지역구</th>
+						<th class="text-center">연령</th>
+						<th class="text-center"></th>
+						<th class="text-center">책 이름</th>
+						<th class="text-center">대출 횟수</th>
+					</tr>
+					<c:forEach var="vo" items="${cList }">
+						<tr>
+							<td class="text-center">${vo.year }</td>
+							<td class="text-center">${vo.gu }</td>
+							<th class="text-center">${vo.age }</th>
+							<td class="text-center"><img src="${vo.bookImageURL }"
+								width=100 height=100></td>
+							<td class="text-center"><a
+								href="../../book/detailebook/detailebook.do?bookname=${vo.bookname }&bookImageURL=${vo.bookImageURL}">${vo.bookname }</a></td>
+							<td class="text-center">${vo.loan_count }</td>
+						</tr>
+					</c:forEach>
+				</table>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
