@@ -14,7 +14,7 @@
             <span>도서 차트</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../book/tables/tables.do">
+          <a class="nav-link" href="../../book/board/list.do">
             <i class="fas fa-fw fa-table"></i>
             <span>커뮤니티</span></a>
         </li>
