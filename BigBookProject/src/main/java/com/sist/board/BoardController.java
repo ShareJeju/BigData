@@ -30,6 +30,7 @@ public class BoardController {
 		return "board/list";
 	}
 	
+	
 	// CREATE
 	@RequestMapping("board/insert.do")
 	public String board_insert(Model model)
