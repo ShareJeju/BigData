@@ -235,7 +235,7 @@ $(function(){
 	
 	<div>
 	   <p>
-		<h1 style="margin-left: 310px">베스트 셀러</h1>
+		<h1>베스트 셀러</h1>
 		<div class="container" style="max-width: 1500px;">
 			<div class="row">
 				<table class="table table-hover">
