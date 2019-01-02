@@ -42,7 +42,7 @@
 							<tr>
 								<td rowspan="4" width=20%><img src="${bvo.bookImageURL}"
 									width=300 height=450> </a></td>
-								<th class="success text-center"><h1>${bvo.bookname }</h1> </a>
+								<th class="success text-center"><h4>${bvo.bookname }</h4> </a>
 								</th>
 							</tr>
 							<tr>
@@ -61,12 +61,11 @@
 			</table>
 		</div>
 
-		<div class="container" style="max-width: 2000px;">
 			<div class="row">
 				<!-- Area Chart Example-->
 				<div class="card mb-3 col-sm-6">
 					<div class="card-header">
-						 감성분석 그래프
+						 <i>감성분석 그래프</i>
 					</div>
 					<div class="card-body" style="height: 640px;">
 						<div>
@@ -79,7 +78,7 @@
 
 				<div class="card mb-3 col-sm-6">
 					<div class="card-header">
-						연관분석 시각화
+						<i>연관분석 시각화</i>
 					</div>
 					<div class="card-body" style="height: 640px;">
 						<div>
@@ -92,6 +91,5 @@
 
 			</div>
 		</div>
-	</div>
 </body>
 </html>
