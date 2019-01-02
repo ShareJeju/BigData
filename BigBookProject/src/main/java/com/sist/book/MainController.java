@@ -23,7 +23,8 @@ public class MainController {
 	
 	@Autowired
 	private BookDAO dao;
-	
+	@Autowired
+	private BookNewsDAO nDao;
 	@Autowired
 	private MainRManager mrm;
 	//차트연습
@@ -83,14 +84,33 @@ public class MainController {
 		   }
 		
 	@RequestMapping("main.do")
-	public String main_page(Model model)
+	public String main_page(String page,String title,Model model)
+	
 	{
+		
+		
+		
+		
+		
 		List<BookVO> mbdList=new ArrayList<BookVO>();
 			List<BookVO> list=dao.mbookRankData();
 			for(BookVO vo:list){
 				mbdList.add(vo);
 			
 		}
+			
+			 if(title==null)
+				   title="도서";
+			   nDao.newsInsert(title);
+			   
+			   if(page==null)
+			   {
+				   page="1";
+				  
+			   }
+			   int curpage=Integer.parseInt(page);
+			   int totalpage=5; //데이터 50개
+			   List<BookNewsVO> nlist=nDao.newsListData(curpage);
 		List<BookVO> wbdList=new ArrayList<BookVO>();
 		List<BookVO> wolist=dao.wbookRankData();
 		for(BookVO vo2:wolist){
@@ -99,6 +119,10 @@ public class MainController {
 		
 		model.addAttribute("wbdList",wbdList);
 		model.addAttribute("mbdList",mbdList);
+		model.addAttribute("totalpage",totalpage);
+		   model.addAttribute("nlist",nlist);
+		   model.addAttribute("curpage",curpage);
+		   model.addAttribute("title",title);
 		chartData(model);
 		chartData2(model);
 		return "main";

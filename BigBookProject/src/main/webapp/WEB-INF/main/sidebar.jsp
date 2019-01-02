@@ -11,12 +11,12 @@
         <li class="nav-item">
           <a class="nav-link" href="../../book/charts/charts.do">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a>
+            <span>도서 차트</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../../book/tables/tables.do">
             <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span></a>
+            <span>커뮤니티</span></a>
         </li>
       </ul>
 </body>
